@@ -4,35 +4,21 @@ require '../vendor/autoload.php';
 
 use OOPHP\Observer\Weather\WeatherData;
 use OOPHP\Observer\Weather\CurrentConditionsDisplay;
+use OOPHP\Observer\Weather\NortPoleStation;
 
 $weatherData = new WeatherData();
 $currentConditions = new CurrentConditionsDisplay($weatherData);
+$northStation = new NortPoleStation();
+
 
 // Data change 1
-$weatherData->setMesurements(25, 75, 23);
-
-sleep(1);
-echo 'Receiving the data from our North Pole Weather Station 1';
-sleep(1);
-echo '.';
-sleep(1);
-echo '.';
-sleep(1);
-echo '.'. "\n";
-
+$data = $northStation->receiveTransmission();
+$weatherData->setMesurements($data[0], $data[1], $data[2]);
 
 // Data change 2
-$weatherData->setMesurements(12, 80, 23);
-
-sleep(1);
-echo 'Receiving the data from our North Pole Weather Station 2';
-sleep(1);
-echo '.';
-sleep(1);
-echo '.';
-sleep(1);
-echo '.'. "\n";
-
+$data = $northStation->receiveTransmission();
+$weatherData->setMesurements($data[0], $data[1], $data[2]);
 
 // Data change 3
-$weatherData->setMesurements(10, 90, 23);
+$data = $northStation->receiveTransmission();
+$weatherData->setMesurements($data[0], $data[1], $data[2]);
