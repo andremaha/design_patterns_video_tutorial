@@ -3,13 +3,13 @@
 namespace OOPHP\Observer\Weather;
 
 /**
- * Emulates the weather data transmition all the way from the North Pole.
+ * Emulates the weather data transmission all the way from the North Pole.
  *
  * @author      Andrey I. Esaulov <aesaulov@me.com>
  * @package     design_patterns_video_tutorial
  * @version     0.1
  */
-class NortPoleStation
+class NorthPoleStation
 {
     public function receiveTransmission()
     {

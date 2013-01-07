@@ -4,11 +4,11 @@ require '../vendor/autoload.php';
 
 use OOPHP\Observer\Weather\WeatherData;
 use OOPHP\Observer\Weather\CurrentConditionsDisplay;
-use OOPHP\Observer\Weather\NortPoleStation;
+use OOPHP\Observer\Weather\NorthPoleStation;
 
 $weatherData = new WeatherData();
 $currentConditions = new CurrentConditionsDisplay($weatherData);
-$northStation = new NortPoleStation();
+$northStation = new NorthPoleStation();
 
 
 // Data change 1
