@@ -3,15 +3,15 @@
 namespace OOPHP\Observer\Weather;
 
 /**
-* Show the current conditions when those get changed in the WeatherData.
-*
+ * Calculate and display the forecast information judging by the changed weather conditions.
+ *
  * @author      Andrey I. Esaulov <aesaulov@me.com>
  * @package     design_patterns_video_tutorial
  * @version     0.1
 */
-class CurrentConditionsDisplay implements Observer, DisplayElement
+class ForecastDisplay implements Observer, DisplayElement
 {
-    private $temperature, $humidity, $pressure, $weatherData;
+    private $oldTemperature, $temperature, $humidity, $pressure, $weatherData;
 
 
     public function __construct(Subject $weatherData)
@@ -22,7 +22,11 @@ class CurrentConditionsDisplay implements Observer, DisplayElement
 
     public function display()
     {
-        echo "Current conditions: \t " . $this->temperature . "C degrees and " . $this->humidity . "% humdity \n";
+        if ($this->temperature > $this->oldTemperature) {
+            echo "Forecast: \t\t It's getting warmer! \n";
+        } else {
+            echo "Forecast: \t\t It's getting colder! \n";
+        }
     }
 
     public function update($temp, $humidity, $pressure)
@@ -31,6 +35,7 @@ class CurrentConditionsDisplay implements Observer, DisplayElement
         $this->humidity = $humidity;
         $this->pressure = $pressure;
         $this->display();
+        $this->oldTemperature = $temp;
     }
 
 }
