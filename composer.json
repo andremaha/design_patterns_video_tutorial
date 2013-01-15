@@ -1,5 +1,9 @@
 {
+    "require": {
+        "symfony/dependency-injection": "2.1.*"
+    },
     "autoload": {
         "psr-0": {"OOPHP": "src/"}
-    }
+    },
+    "minimum-stability": "dev"
 }
