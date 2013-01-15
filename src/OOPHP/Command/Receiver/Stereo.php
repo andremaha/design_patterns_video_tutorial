@@ -15,10 +15,14 @@ class Stereo
 {
     private $cd;
 
+    public function injectCD()
+    {
+        echo "Setting the CD with the album " . $this->cd->getAlbum() . "\n";
+    }
+
     public function setCD(CD $cd)
     {
         $this->cd = $cd;
-        echo "Setting the CD with the album " . $this->cd->getAlbum() . "\n";
     }
 
     public function on()
@@ -31,11 +35,16 @@ class Stereo
         $stringBuffer = "CD with the album " . $this->cd->getAlbum() . " is ejected\n";
         $stringBuffer .= get_class($this) . " is now off \n";
 
-        return $stringBuffer;
+        echo $stringBuffer;
     }
 
     public function setVolume($volume)
     {
         echo "Volume is set to " . $volume . "\n";
+    }
+
+    public function getCD()
+    {
+        return $this->cd;
     }
 }

@@ -15,18 +15,16 @@ use OOPHP\Command\Receiver\CD;
 class StereoOnWithCDCommand implements Command
 {
     private $stereo;
-    private $cd;
 
-    public function __construct(Stereo $stereo, CD $cd)
+    public function __construct(Stereo $stereo)
     {
         $this->stereo = $stereo;
-        $this->cd = $cd;
     }
 
     public function execute()
     {
         $this->stereo->on();
-        $this->stereo->setCD($this->cd);
+        $this->stereo->injectCD();
         $this->stereo->setVolume(11);
     }
 }

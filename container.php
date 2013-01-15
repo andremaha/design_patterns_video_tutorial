@@ -10,14 +10,16 @@ use Symfony\Component\DependencyInjection\Reference;
 $sc = new ContainerBuilder();
 
 // Params
-$sc->setParameter('album', 'NONE');
+$sc->setParameter('album', 'Sgt. Pepper’s Lonely Hearts Club Band');
 
 // Receivers
 $sc->register('receiver.light', 'OOPHP\Command\Receiver\Light');
 $sc->register('receiver.garageDoor', 'OOPHP\Command\Receiver\GarageDoor');
-$sc->register('receiver.stereo', 'OOPHP\Command\Receiver\Stereo');
 $sc->register('receiver.cd', 'OOPHP\Command\Receiver\CD')
-    ->setArguments(array('%album%'));
+    ->addMethodCall('setAlbum', array('%album%'));
+$sc->register('receiver.stereo', 'OOPHP\Command\Receiver\Stereo')
+    ->addMethodCall('setCD', array(new Reference('receiver.cd')));
+
 
 // Commands
 $sc->register('command.lightsOn', 'OOPHP\Command\LightsOnCommand')

@@ -2,7 +2,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 $sc = include __DIR__ . '/../container.php';
-$sc->set('album', 'Srasdfasdf');
 
 // Invoker
 $remote = $sc->get('invoker.simpleRemote');
@@ -29,3 +28,6 @@ $complexRemote->onButtonWasPushed(1);
 
 // And switch off the light to create romantic mood =)
 $complexRemote->offButtonWasPushed(0);
+
+// In the end of the evening I switch the stereo off
+$complexRemote->offButtonWasPushed(1);

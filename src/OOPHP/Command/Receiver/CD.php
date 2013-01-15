@@ -12,9 +12,13 @@ class CD
 {
     private $album;
 
-    public function __construct($album)
+    public function __construct()
     {
-        $this->album;
+    }
+
+    public function setAlbum($album)
+    {
+        $this->album = $album;
     }
 
     public function getAlbum()
