@@ -1,13 +1,13 @@
 <?php
 
-namespace OOPHP\Command\Remote;
+namespace OOPHP\Command\Receiver;
 
 /**
  * Light class that has no knowledge about the commands - its thing is switching the light on and off
  *
  * @author      Andrey I. Esaulov <aesaulov@me.com>
  * @package     design_patterns_video_tutorial
- * @version     0.1
+ * @version     0.2
  */
 class Light
 {

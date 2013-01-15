@@ -1,15 +1,17 @@
 <?php
 
-namespace OOPHP\Command\Remote;
+namespace OOPHP\Command;
+
+use OOPHP\Command\Receiver\Light;
 
 /**
- * Concrete Command implementation for "executing" the $light->on()
+ * Concrete Command implementation for "executing" the $light->off()
  *
  * @author      Andrey I. Esaulov <aesaulov@me.com>
  * @package     design_patterns_video_tutorial
- * @version     0.1
+ * @version     0.2
  */
-class LightsOnCommand implements Command
+class LightsOffCommand implements Command
 {
 
     private $light;
@@ -21,6 +23,6 @@ class LightsOnCommand implements Command
 
     public function execute()
     {
-        $this->light->on();
+        $this->light->off();
     }
 }

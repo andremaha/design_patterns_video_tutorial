@@ -1,12 +1,12 @@
 <?php
 
-namespace OOPHP\Command\Remote;
+namespace OOPHP\Command\Receiver;
 
 /**
  *
  * @author      Andrey I. Esaulov <aesaulov@me.com>
  * @package     design_patterns_video_tutorial
- * @version     0.1
+ * @version     0.2
  */
 class GarageDoor
 {
